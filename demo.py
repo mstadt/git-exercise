@@ -35,7 +35,7 @@ def main():
     t = np.linspace(0, 10, 101)
     
     sol = odeint(CART_system, y0, t)
-    print(sol)
+    #print(sol)
 
     plt.plot(t, sol[:, 0], 'b', label='C_E')
     plt.plot(t, sol[:, 1], 'g', label='C_P')
