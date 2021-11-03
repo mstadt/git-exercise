@@ -4,6 +4,8 @@ A simple example for a git workflow
 
 # imports
 import matplotlib.pyplot as plt
+import numpy as np
+from scipy.integrate import odeint
 
 
 # define the rhs of system of odes
@@ -32,7 +34,7 @@ def main():
     
     t = np.linspace(0, 10, 101)
     
-    sol = CART_system(pend, y0, t)
+    sol = odeint(CART_system, y0, t)
 
     plt.plot(t, sol[:, 0], 'b', label='C_E')
     plt.plot(t, sol[:, 1], 'g', label='C_P')
