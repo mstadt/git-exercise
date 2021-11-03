@@ -14,8 +14,8 @@ def main():
 
     # define the rates dictionary
     rates_dict = {}
-    rates_dict["rho"] = 5.
-    rates_dict["k"] = 10.
+    rates_dict["rho"] = 0.1
+    rates_dict["k"] = 0.05
 
     # define the parameter dictionary (pick whatever values you like!)
     params_dict = {}
@@ -26,15 +26,16 @@ def main():
     # Solve the system
     def CART_system(y, t):
         C_E, C_P = y
-        dydt = [rates_dict["rho"]*C_E, rates_dict["k"]*C_P]
+        dydt = [rates_dict["rho"]*C_E-rates_dict["k"]*C_E, -rates_dict["k"]*C_P]
         return dydt
 
     # plot the system and save the figure
-    y0 = [0.1, 0.0]
+    y0 = [10.0, 10.0]
     
     t = np.linspace(0, 10, 101)
     
     sol = odeint(CART_system, y0, t)
+    print(sol)
 
     plt.plot(t, sol[:, 0], 'b', label='C_E')
     plt.plot(t, sol[:, 1], 'g', label='C_P')
