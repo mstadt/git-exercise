@@ -24,7 +24,7 @@ def main():
     # Solve the system
     def CART_system(y, t):
         C_E, C_P = y
-        dydt = [rates_dict["rho"], rates_dict["k"]]
+        dydt = [rates_dict["rho"]*C_E, rates_dict["k"]*C_P]
         return dydt
 
     # plot the system and save the figure
