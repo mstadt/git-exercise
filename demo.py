@@ -34,8 +34,8 @@ def main():
     
     sol = CART_system(pend, y0, t)
 
-    plt.plot(t, sol[:, 0], 'b', label='theta(t)')
-    plt.plot(t, sol[:, 1], 'g', label='omega(t)')
+    plt.plot(t, sol[:, 0], 'b', label='C_E')
+    plt.plot(t, sol[:, 1], 'g', label='C_P')
     plt.legend(loc='best')
     plt.xlabel('t')
     plt.grid()
