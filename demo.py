@@ -16,6 +16,10 @@ def main():
     rates_dict["k"] = 10.
 
     # define the parameter dictionary (pick whatever values you like!)
+    params_dict = {}
+    params_dict["U_crit"] = 5.
+    params_dict["H"] = 3.
+    params_dict["I"] = 6.
 
     # Solve the system
     def CART_system(y, t):
